@@ -44,14 +44,34 @@ def menu():
     print("2 - Ver serviços")
     print("3 - Preço do serviço ")
     print("4 - Ver horario disponivel")
-    print("5 - Sair")
+    print("5 - Ver clientes cadastrados")
+    print("6 - Sair")
     return input("Escolha uma opção: ")
 #variaveis de controle
 
 
 while True:
     opcao = menu()
-    print(f"{opcao}")
         
     if opcao == "1":
-        agendar()
+        nome = input("Nome do cliente: ")
+        contato = input("Inserir contato: ")
+        data = input("Inserir data: ")
+        hora = input("Digite o horário: ")
+        barbeiro = input("Escolha seu barbeiro: ")
+        serviço = input("Tipo de serviço: ")
+        print(f"agendamento '{agendamento}' agendado com sucesso!")
+        
+    if opcao == "2":
+        corte = input("Digite o corte: ")
+        barba = input("Barba: ")
+        sobrancelha = input("Sobrancelha: ")
+        print("Serviço confirmado!")
+        
+    if opcao == "3":
+        valor_do_corte=40
+            print(f"O valor do corte é R$ {valor_do_corte},00")
+        valor da barba:
+            print("R$20")
+        valor da sobrancelha:
+            print("R$10")
