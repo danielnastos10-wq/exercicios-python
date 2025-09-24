@@ -1,5 +1,4 @@
-
-      from dataclasses import dataclass
+from dataclasses import dataclass
 from datetime import datetime
 
 @dataclass
@@ -121,3 +120,4 @@ def menu():
             print("Opção inválida!")
                 
 menu()
+
