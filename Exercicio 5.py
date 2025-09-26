@@ -13,7 +13,7 @@ class Pessoa:
     celular:str
     email:str
     
-lista_pessoas = []
+lista_pessoas = ["João", "Pedro"]
 @dataclass
 class Barbeiro:
     nome:str
@@ -29,7 +29,7 @@ class Agendamento:
     hora:str
     barbeiro:str
     
-lista_agendamento = ["10h", "11h", "14h", "15h30", "16h"]
+lista_horarios = ["10h", "11h", "14h", "15h30", "16h"]
 @dataclass
 class Serviços:
     corte:str
@@ -37,6 +37,10 @@ class Serviços:
     sobrancelha:str
     
 lista_serviços = ["corte", "barba", "sobrancelha"]
+
+lista_cortes = ["Social", "Careca", "Americano", "Asa delta"]
+lista_barba = ["Barba cheia", "Curta", "Italiana", "Por fazer"]
+lista_sombrancelha = ["Risquinho", "nenhuma"]
 
 def agendar():
     nome = input("Digite seu nome: ")
@@ -74,14 +78,25 @@ while True:
         barbeiro = input("Escolha seu barbeiro: ")
         servico = input("Tipo de serviço: ")
         agendamento = Agendamento(data,hora,barbeiro)
-        lista_agendamento.append(agendamento)    
+        lista_serviços.append(agendamento)    
         print(f"agendamento '{agendamento}' agendado com sucesso!")
         
     if opcao == "2":
-        corte = input("Digite o corte: ")
-        barba = input("Barba: ")
-        sobrancelha = input("Sobrancelha: ")
-        print("Serviço confirmado!")
+        print("\n--- Serviços ---")
+        
+        print("\n--- Cortes ---")
+        for servico in lista_cortes:
+            print(f"- {servico}")
+        
+        print("\n--- Barbas ---")
+        for servico in lista_barba:
+            print(f"- {servico}")
+            
+        print("\n--- Sobrancelhas ---")
+        for servico in lista_sombrancelha:
+            print(f"- {servico}")
+            
+        print("----------------------------")
         
     if opcao == "3":
         valor_do_corte=40
@@ -90,3 +105,26 @@ while True:
         print(f"O valor da barba é R$ {valor_da_barba},00")
         valor_da_sobrancelha=10
         print(f"O valor da sobrancelha é R$ {valor_da_sobrancelha},00")
+        
+    if opcao == "4":
+        print("Horários disponíveis: ")
+        for horario in lista_horarios:
+            print(horario)
+        escolher = input("Escolha o horário: ")
+        if escolher in lista_horarios:
+            print(f"Você escolheu o horário {escolher}. Agendamento feito!")
+            
+    if opcao == "5":
+        print("\n--- Ver clientes cadastrados ---")
+        if not lista_pessoas:
+            print("Ainda não há clientes cadastrados!")
+        else:
+            for cliente in lista_pessoas:
+                print(f" {cliente}")
+                
+        print("Esses são os clientes cadastrados.")
+        
+    if opcao == "6":
+        print("Obrigado pela atenção!")
+        
+    break
